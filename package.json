@@ -1,0 +1,18 @@
+{
+    "name": "citizen-grievance-platform",
+    "version": "1.0.0",
+    "description": "AI-Based Citizen Grievance Intelligence Platform",
+    "scripts": {
+        "setup": "npm install && cd client && npm install && cd ../server && npm install",
+        "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run ml-server\"",
+        "server": "npm run dev --prefix server",
+        "client": "npm run dev --prefix client",
+        "ml-server": "python -m uvicorn ml-server.main:app --reload --port 8000"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}
